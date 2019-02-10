@@ -9,7 +9,7 @@ var refreshDelay = 30000;
 // pools stats by MainCoins
 var networkStat = {
  "btcm": [
-	["webbtcm.semipool.com", "https://webbtcm.semipool.com/api"]
+	[""]
  ]
 };
 
