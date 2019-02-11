@@ -1,4 +1,4 @@
-var api = 'http://nodeparis.bitcoinmono.io:11358';
+var api = 'https://explorer.bitcoinmono.io/api';
 var donationAddress = "";
 var blockTargetInterval = 50; // enter the block interval in seconds
 var coinUnits = 10000;  // enter in the amount of atomic units in 1 coin, eg. 100 shells = 1 trtl
