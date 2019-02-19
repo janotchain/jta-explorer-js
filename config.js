@@ -15,6 +15,6 @@ var networkStat = {
 
 var networkStat2 = {
     "btcm": [
-	[""]
+	["https://webbtcm.semipool.com","https://webbtcm.semipool.com/api"]
  ]
 };
