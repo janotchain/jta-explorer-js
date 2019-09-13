@@ -93,9 +93,10 @@ var text = document.getElementById('txt_search').value;
 function GetSearchBlockbyHeight(){
 
 	var block, xhrGetSearchBlockbyHeight;
+    var blockHeight = isNaN(parseInt(text)) ? 1 : parseInt(text);
     if (xhrGetSearchBlockbyHeight) xhrGetSearchBlockbyHeight.abort();
 	  
-			xhrGetSearchBlockbyHeight = $.ajax({
+        xhrGetSearchBlockbyHeight = $.ajax({
             url: api + '/json_rpc',
             method: "POST",
             data: JSON.stringify({
@@ -103,7 +104,7 @@ function GetSearchBlockbyHeight(){
                 id: "blockbyheight",
                 method:"getblockheaderbyheight",
                 params: {
-                   height: parseInt(text)
+                   height: blockHeight
                 }
             }),
             dataType: 'json',
