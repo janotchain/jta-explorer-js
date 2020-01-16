@@ -24,8 +24,8 @@ function fetch_rpc(string $api, string $method, string $params) {
         return json_decode($response, true);
 };
 
-function fetch_getinfo(string $api) {
-        $_url = $api . '/getinfo';
+function fetch_info(string $api) {
+        $_url = $api . '/info';
         $response = file_get_contents($_url);
         return json_decode($response, true);
 };
