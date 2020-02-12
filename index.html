@@ -122,6 +122,7 @@ function GetSearchBlockbyHeight(){
 function GetSearchBlock(){
 var block, xhrGetSearchBlock;
 	if (xhrGetSearchBlock) xhrGetSearchBlock.abort();
+        alert("Test 1 : "+hash+",api="+api);
 		xhrGetSearchBlock = $.ajax({
             url: api + '/json_rpc',
             method: "POST",
@@ -136,7 +137,7 @@ var block, xhrGetSearchBlock;
             dataType: 'json',
             cache: 'false',
 			success: function(data){
-                alert("test : "+hash+",api="+api);
+                alert("Test 2 : "+hash+",api="+api);
 				if(data.result){
 					block = data.result.block;
 					sessionStorage.setItem('searchBlock', JSON.stringify(block));
