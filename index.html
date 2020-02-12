@@ -140,7 +140,7 @@ var block, xhrGetSearchBlock;
 					block = data.result.block;
 					sessionStorage.setItem('searchBlock', JSON.stringify(block));
 					window.location.href = getBlockchainUrl(block.hash);
-				} else if(data.error) {
+				} else {
 					$.ajax({
 						url: api + '/json_rpc',
 						method: "POST",
