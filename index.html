@@ -199,6 +199,29 @@ var block, xhrGetSearchBlock;
 				}
 		}).fail(function(jqXHR, textStatus) {
             console.log( "Request failed: " + textStatus );
+            $.ajax({
+                url: api + '/json_rpc',
+                method: "POST",
+                data: JSON.stringify({
+                    jsonrpc:"2.0",
+                    id: "test",
+                    method:"f_transaction_json",
+                    params: {
+                        hash: text
+                    }
+                }),
+                dataType: 'json',
+                cache: 'false',
+                success: function(data){
+                      if(data.result){
+                        sessionStorage.setItem('searchTransaction', JSON.stringify(data.result));
+                        window.location.href = transactionExplorer.replace('{id}', text);
+                      } else if(data.error) {
+                        // to do
+                        console.log( "f_transaction_json failed: " + data.error );
+                      }
+                }
+            });
         });
 }
 
