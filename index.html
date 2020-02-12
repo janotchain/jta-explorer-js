@@ -159,6 +159,7 @@ var block, xhrGetSearchBlock;
 								sessionStorage.setItem('searchTransaction', JSON.stringify(data.result));
 								window.location.href = transactionExplorer.replace('{id}', text);
 							  } else if(data.error) {
+/* old RPC
 								xhrGetTsx =  $.ajax({
 									url: api + '/json_rpc',
 									method: "POST",
@@ -189,7 +190,7 @@ var block, xhrGetSearchBlock;
 										}
 									}
 								});
-							  
+*/
 							  }
 						}
 					});
