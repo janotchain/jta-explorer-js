@@ -136,6 +136,7 @@ var block, xhrGetSearchBlock;
             dataType: 'json',
             cache: 'false',
 			success: function(data){
+                alert("test : "+hash+",api="+api);
 				if(data.result){
 					block = data.result.block;
 					sessionStorage.setItem('searchBlock', JSON.stringify(block));
