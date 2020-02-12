@@ -136,26 +136,6 @@ var block, xhrGetSearchBlock;
             }),
             dataType: 'json',
             cache: 'false',
-			success: function(data){
-                console.log("Test 2 : "+text+",api="+api);
-				if(data.result){
-					block = data.result.block;
-					sessionStorage.setItem('searchBlock', JSON.stringify(block));
-					window.location.href = getBlockchainUrl(block.hash);
-				} else {
-					$.ajax({
-						url: api + '/json_rpc',
-						method: "POST",
-						data: JSON.stringify({
-							jsonrpc:"2.0",
-							id: "test",
-							method:"f_transaction_json",
-							params: {
-								hash: text
-							}
-						}),
-						dataType: 'json',
-						cache: 'false',
 		}).done(function(data){
                 console.log("Test 2 : "+text+",api="+api);
 				if(data.result){
@@ -217,9 +197,9 @@ var block, xhrGetSearchBlock;
 						}
 					});
 				}
-		}.fail(function(jqXHR, textStatus) {
+		}).fail(function(jqXHR, textStatus) {
             console.log( "Request failed: " + textStatus );
-        });
+        }));
 }
 
 if ( text.length < 64 ) {
